@@ -11,7 +11,7 @@ public class PlaylistRekursif {
         return playlist;
     }
 
-    // Fungsi rekursif untuk menghitung total durasi lagi dalam playlist
+    // Fungsi rekursif untuk menghitung total durasi lagu dalam playlist
     public static double totalDurasi(Lagu[] list, int n) {
         if (list == null || n <= 0) {
             return 0.0;
