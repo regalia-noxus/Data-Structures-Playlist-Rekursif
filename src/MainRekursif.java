@@ -16,23 +16,24 @@ public class MainRekursif {
         Lagu[] list = app.getPlaylist();
         int n = list.length;
 
-        //Pengukuran waktu cariDurasiTerpanjang() dan pencarian objek lagu terpanjang
-        long startMax = System.nanoTime();
-        double maxDurasi = PlaylistRekursif.cariDurasiTerpanjang(list, n - 1);
-        Lagu laguMax = PlaylistRekursif.cariLaguTerpanjang(list, n - 1);
-        long endMax = System.nanoTime();
-        long timeMaxMs = Math.round((endMax - startMax) / 1_000_000.0);
-
-        //tampilkan waktu eksekusi masing-masing operasi
-        System.out.println("Execution Time (cariDurasiTerpanjang): " + timeMaxMs + " ms");
 
         //Menghitung total durasi
         double total = PlaylistRekursif.totalDurasi(list, n);
+
+        double maxDurasi = PlaylistRekursif.cariDurasiTerpanjang(list, n - 1);
+        Lagu laguMax = PlaylistRekursif.cariLaguTerpanjang(list, n - 1);
 
         // --- MENAMPILKAN OUTPUT SESUAI SPESIFIKASI SOAL ---
         System.out.println("=== ANALISIS REKURSIF PLAYLIST ===");
         System.out.println("Jumlah lagu : " + n);
         System.out.printf("Total durasi : %.2f menit%n", total);
+
+        if (laguMax != null) {
+            System.out.printf("Lagu terpanjang : \"%s\" - %s (%.2f menit)%n",
+                    laguMax.getJudul(), laguMax.getArtis(), maxDurasi);
+        } else {
+            System.out.printf("Lagu terpanjang : %.2f menit%n", maxDurasi);
+        }
 
         // ===== Bagian Anggota 3: Reverse Traversal Rekursif =====
         System.out.println("\nPlaylist dari belakang:");
