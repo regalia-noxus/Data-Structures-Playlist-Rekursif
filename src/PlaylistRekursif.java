@@ -31,7 +31,6 @@ public class PlaylistRekursif {
     }
     // ===== akkhir bagian anggota 3 =====
 
-    //cariDurasiTerpanjang
     //mencari nilai durasi terpanjang di dalam playlist secara rekursif
     public static double cariDurasiTerpanjang(Lagu[] list, int index) {
         //mengecek list lagu
@@ -45,5 +44,24 @@ public class PlaylistRekursif {
         //recursive case
         double maxSebelumnya = cariDurasiTerpanjang(list, index - 1);
         return Math.max(list[index].getDurasi(), maxSebelumnya);
+    }
+
+    //mencari objek Lagu yang memiliki durasi terpanjang secara rekursif
+    //sehingga dapat menampilkan judul dan nama artis pada output.
+    public static Lagu cariLaguTerpanjang(Lagu[] list, int index) {
+        if (list == null || list.length == 0 || index < 0) {
+            return null;
+        }
+        // Base case
+        if (index == 0) {
+            return list[0];
+        }
+        // Recursive case
+        Lagu maxSebelumnya = cariLaguTerpanjang(list, index - 1);
+        if (list[index].getDurasi() >= maxSebelumnya.getDurasi()) {
+            return list[index];
+        } else {
+            return maxSebelumnya;
+        }
     }
 }

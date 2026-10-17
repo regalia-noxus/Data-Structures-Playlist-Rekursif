@@ -16,6 +16,16 @@ public class MainRekursif {
         Lagu[] list = app.getPlaylist();
         int n = list.length;
 
+        //Pengukuran waktu cariDurasiTerpanjang() dan pencarian objek lagu terpanjang
+        long startMax = System.nanoTime();
+        double maxDurasi = PlaylistRekursif.cariDurasiTerpanjang(list, n - 1);
+        Lagu laguMax = PlaylistRekursif.cariLaguTerpanjang(list, n - 1);
+        long endMax = System.nanoTime();
+        long timeMaxMs = Math.round((endMax - startMax) / 1_000_000.0);
+
+        //tampilkan waktu eksekusi masing-masing operasi
+        System.out.println("Execution Time (cariDurasiTerpanjang): " + timeMaxMs + " ms");
+
         //Menghitung total durasi
         double total = PlaylistRekursif.totalDurasi(list, n);
 
