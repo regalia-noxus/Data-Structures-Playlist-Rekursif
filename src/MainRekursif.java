@@ -15,6 +15,10 @@ public class MainRekursif {
         PlaylistRekursif app = new PlaylistRekursif(dataset5);
         Lagu[] list = app.getPlaylist();
         int n = list.length;
+
+        //Menghitung total durasi
+        double total = PlaylistRekursif.totalDurasi(list, n);
+        System.out.printf("Total durasi : %.2f menit%n", total);
     }
 
 }
