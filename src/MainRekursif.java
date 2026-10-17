@@ -23,6 +23,11 @@ public class MainRekursif {
         System.out.println("=== ANALISIS REKURSIF PLAYLIST ===");
         System.out.println("Jumlah lagu : " + n);
         System.out.printf("Total durasi : %.2f menit%n", total);
+
+        // ===== Bagian Anggota 3: Reverse Traversal Rekursif =====
+        System.out.println("\nPlaylist dari belakang:");
+        PlaylistRekursif.tampilkanMundur(list, n - 1);
+        // ===== Akhir Bagian Anggota 3 =====
     }
 
 }
