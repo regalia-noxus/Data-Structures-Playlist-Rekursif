@@ -18,6 +18,10 @@ public class MainRekursif {
 
         //Menghitung total durasi
         double total = PlaylistRekursif.totalDurasi(list, n);
+
+        // --- MENAMPILKAN OUTPUT SESUAI SPESIFIKASI SOAL ---
+        System.out.println("=== ANALISIS REKURSIF PLAYLIST ===");
+        System.out.println("Jumlah lagu : " + n);
         System.out.printf("Total durasi : %.2f menit%n", total);
     }
 
