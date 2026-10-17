@@ -30,4 +30,20 @@ public class PlaylistRekursif {
         tampilkanMundur(list, index - 1); // Recursive case.
     }
     // ===== akkhir bagian anggota 3 =====
+
+    //cariDurasiTerpanjang
+    //mencari nilai durasi terpanjang di dalam playlist secara rekursif
+    public static double cariDurasiTerpanjang(Lagu[] list, int index) {
+        //mengecek list lagu
+        if (list == null || list.length == 0 || index < 0) {
+            return 0.0;
+        }
+        //base case
+        if (index == 0) {
+            return list[0].getDurasi();
+        }
+        //recursive case
+        double maxSebelumnya = cariDurasiTerpanjang(list, index - 1);
+        return Math.max(list[index].getDurasi(), maxSebelumnya);
+    }
 }
