@@ -1,6 +1,7 @@
 // class lagu berfungsi untuk merepresentasikan entitas data lagu
 public class Lagu {
-    // Enkapsulasi: Atribut dibuat private agar tidak bisa diakses langsung dari luar class
+    // Enkapsulasi: Atribut dibuat private agar tidak bisa diakses langsung dari
+    // luar class
     private String judul;
     private String artis;
     private double durasi;
