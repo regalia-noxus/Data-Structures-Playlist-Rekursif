@@ -10,4 +10,12 @@ public class PlaylistRekursif {
     public Lagu[] getPlaylist() {
         return playlist;
     }
+
+    // Fungsi rekursif untuk menghitung total durasi lagi dalam playlist
+    public static double totalDurasi(Lagu[] list, int n) {
+        if (list == null || n <= 0) {
+            return 0.0;
+        }
+        return list[n - 1].getDurasi() + totalDurasi(list, n - 1);
+    }
 }
