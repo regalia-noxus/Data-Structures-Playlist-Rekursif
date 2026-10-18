@@ -21,13 +21,22 @@ public class PlaylistRekursif {
 
     // ===== Bagian Anggota 3: Reverse Traversal Rekursif =====
     // Menampilkan lagu dari indeks terakhir ke pertama dengan kompleksitas O(n).
+    // menggunakan rekursi dengan kompleksitas waktu O(n).
     public static void tampilkanMundur(Lagu[] list, int index) {
-        if (index < 0) { // Base case: semua lagu sudah ditampilkan.
+        // Base case: berhenti jika indeks sudah kurang dari 0.
+        if (list == null || index < 0) {
             return;
         }
 
-        list[index].tampilkanInfo();
-        tampilkanMundur(list, index - 1); // Recursive case.
+        // Menampilkan nomor, judul, dan artis lagu.
+        System.out.println(
+            (index + 1) + ". " +
+            list[index].getJudul() + " - " +
+            list[index].getArtis()
+        );
+
+        // Recursive case: berpindah ke indeks sebelumnya.
+        tampilkanMundur(list, index - 1);
     }
     // ===== akkhir bagian anggota 3 =====
 
