@@ -42,8 +42,10 @@ public class MainRekursif {
         }
 
         // ===== Bagian Anggota 3: Reverse Traversal Rekursif =====
-        System.out.println("\nPlaylist dari belakang:");
+        long startReverse = System.nanoTime();
         PlaylistRekursif.tampilkanMundur(list, n - 1);
+        long endReverse = System.nanoTime();
+        long timeReverseMs = Math.round((endReverse - startReverse) / 1_000_000.0);
         // ===== Akhir Bagian Anggota 3 =====
 
         System.out.println("");
@@ -58,9 +60,9 @@ public class MainRekursif {
     }
 
     public static void jalankanEksperimenWaktu() {
-        System.out.println("==================================================================");
-        System.out.println("     TABEL EKSPERIMEN PENGUKURAN WAKTU EKSEKUSI (n = 3, 5, 10)    ");
-        System.out.println("==================================================================");
+        System.out.println("====================================================================================");
+        System.out.println("              TABEL EKSPERIMEN PENGUKURAN WAKTU EKSEKUSI (n = 3, 5, 10)             ");
+        System.out.println("====================================================================================");
 
         // Dataset master 10 lagu
         Lagu[] masterData = new Lagu[] {
@@ -123,7 +125,7 @@ public class MainRekursif {
             System.out.printf("%-17d | %-15s | %-18s | %-22s%n",
                     ukuran, msTotal + " ms", msReverse + " ms", msMax + " ms");
         }
-        System.out.println("==================================================================");
+        System.out.println("====================================================================================");
     }
     
     //Versi traversal rekursif tanpa mencetak ke console untuk keperluan benchmarking murni
